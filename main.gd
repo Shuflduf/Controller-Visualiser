@@ -11,8 +11,9 @@ extends Control
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton:
 		buttons.get_child(event.button_index).visible = event.pressed
-		for i in buttons_view.get_children():
-			if i.name == str(event.button_index):
+		for i in buttons_view.get_children().size():
+			if buttons_view.get_children()[i].name == str(event.button_index):
+				update_entry(i, event.pressed)
 				return
 		var new_entry = load(button_entry).instantiate()
 		new_entry.name = str(event.button_index)
@@ -35,4 +36,6 @@ func _input(event: InputEvent) -> void:
 				joysticks.get_child(3).modulate.a = event.axis_value
 	
 	else: return
-	
+
+func update_entry(idx, info):
+	buttons_view.get_child(idx).info.text = str(info)
