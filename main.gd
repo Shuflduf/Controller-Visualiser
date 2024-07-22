@@ -18,6 +18,8 @@ func _input(event: InputEvent) -> void:
 		var new_entry = load(button_entry).instantiate()
 		new_entry.name = str(event.button_index)
 		buttons_view.add_child(new_entry)
+		buttons_view.get_child(-1).keycode.text = str(event.button_index)
+		sort_children()
 	
 	elif event is InputEventJoypadMotion:
 		match event.axis:
@@ -39,3 +41,9 @@ func _input(event: InputEvent) -> void:
 
 func update_entry(idx, info):
 	buttons_view.get_child(idx).info.text = str(info)
+
+func sort_children():
+	var children = buttons_view.get_children()
+	children.sort_custom(func(a, b): return (a.name.to_int()) < (b.name.to_int()))
+	for i in range(children.size()):
+		buttons_view.move_child(children[i], i)
