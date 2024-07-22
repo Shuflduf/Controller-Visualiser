@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2acn0vy62oj"]
+[gd_scene load_steps=18 format=3 uid="uid://b2acn0vy62oj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dxfnl"]
 [ext_resource type="Texture2D" uid="uid://ckd5734mqx8dm" path="res://assets/controller/controller_base.png" id="1_tfr2n"]
@@ -11,8 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://7jbmgfk3ljpl" path="res://assets/controller/controller_left_stick.png" id="8_4n2h4"]
 [ext_resource type="Texture2D" uid="uid://cklpexcl6md08" path="res://assets/controller/controller_right_bumper.png" id="8_mvuk8"]
 [ext_resource type="Texture2D" uid="uid://bmnhh1mqy6vee" path="res://assets/controller/controller_left_bumper.png" id="9_dms0f"]
+[ext_resource type="Texture2D" uid="uid://cdlscjv5tsj5y" path="res://assets/controller/controller_du.png" id="12_418ye"]
 [ext_resource type="Texture2D" uid="uid://dyim5pp87s8lr" path="res://assets/controller/controller_right_trigger.png" id="12_tuydi"]
 [ext_resource type="Texture2D" uid="uid://djlnm4nggrmqe" path="res://assets/controller/controller_left_trigger.png" id="12_y2fov"]
+[ext_resource type="Texture2D" uid="uid://pf0f843i67im" path="res://assets/controller/controller_dd.png" id="13_ad5fq"]
+[ext_resource type="Texture2D" uid="uid://0iriw1sut3ky" path="res://assets/controller/controller_dl.png" id="14_wpfw6"]
+[ext_resource type="Texture2D" uid="uid://dvwsn6rw8jddh" path="res://assets/controller/controller_dr.png" id="15_mn01g"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -189,6 +193,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_mvuk8")
+stretch_mode = 5
+
+[node name="DU" type="TextureRect" parent="Buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_418ye")
+stretch_mode = 5
+
+[node name="DD" type="TextureRect" parent="Buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_ad5fq")
+stretch_mode = 5
+
+[node name="DL" type="TextureRect" parent="Buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_wpfw6")
+stretch_mode = 5
+
+[node name="DR" type="TextureRect" parent="Buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_mn01g")
 stretch_mode = 5
 
 [node name="Joysticks" type="Control" parent="."]

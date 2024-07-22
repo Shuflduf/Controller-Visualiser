@@ -11,7 +11,7 @@ extends Control
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton:
-		print(event.button_index)
+		#print(event.button_index)
 		buttons.get_child(event.button_index).visible = event.pressed
 	
 	if event is InputEventJoypadMotion:
