@@ -52,8 +52,7 @@ grow_vertical = 2
 texture = ExtResource("2_n0cup")
 stretch_mode = 5
 
-[node name="RightUnder" type="TextureRect" parent="Unpressed"]
-modulate = Color(0, 0, 0, 1)
+[node name="Right" type="TextureRect" parent="Unpressed"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,17 +60,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_ictyc")
-stretch_mode = 5
-
-[node name="LeftUnder" type="TextureRect" parent="Unpressed"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_4n2h4")
 stretch_mode = 5
 
 [node name="Buttons" type="Control" parent="."]
@@ -160,24 +148,28 @@ grow_vertical = 2
 texture = ExtResource("12_sl6gu")
 stretch_mode = 5
 
-[node name="E4" type="TextureRect" parent="Buttons"]
+[node name="LS" type="TextureRect" parent="Buttons"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("8_4n2h4")
 stretch_mode = 5
 
-[node name="E5" type="TextureRect" parent="Buttons"]
+[node name="RS" type="TextureRect" parent="Buttons"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("7_ictyc")
 stretch_mode = 5
 
 [node name="LB" type="TextureRect" parent="Buttons"]
@@ -308,6 +300,13 @@ offset_top = -324.0
 offset_bottom = 324.0
 grow_horizontal = 0
 grow_vertical = 2
+alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="AdvancedView"]
 layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Sticks" type="VBoxContainer" parent="AdvancedView"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
