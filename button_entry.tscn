@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://kk33620yytrp"]
+
+[ext_resource type="Script" path="res://button_entry.gd" id="1_v7hrp"]
+
+[node name="Entry" type="HBoxContainer"]
+script = ExtResource("1_v7hrp")
+
+[node name="Keycode" type="Label" parent="."]
+layout_mode = 2
+text = "this thing"
+
+[node name="Spacing" type="Label" parent="."]
+layout_mode = 2
+text = "  "
+
+[node name="Info" type="Label" parent="."]
+layout_mode = 2
+text = "this other thing"
