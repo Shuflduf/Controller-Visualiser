@@ -1,10 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://b2acn0vy62oj"]
+[gd_scene load_steps=24 format=3 uid="uid://b2acn0vy62oj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dxfnl"]
 [ext_resource type="Texture2D" uid="uid://ckd5734mqx8dm" path="res://assets/controller/controller_base.png" id="1_tfr2n"]
+[ext_resource type="Shader" path="res://simplescrolls.gdshader" id="2_6k2ci"]
 [ext_resource type="Texture2D" uid="uid://btbu3aqyn4i4g" path="res://assets/controller/controller_unpressed.png" id="2_n0cup"]
 [ext_resource type="Texture2D" uid="uid://orod35fo2mi8" path="res://assets/controller/controller_pressed_a.png" id="3_5m7j5"]
 [ext_resource type="Texture2D" uid="uid://dacjb451jcsi3" path="res://assets/controller/controller_pressed_x.png" id="3_e2vmq"]
+[ext_resource type="Texture2D" uid="uid://cg1xebwbwvc2j" path="res://assets/backround.png" id="3_wxmua"]
 [ext_resource type="Texture2D" uid="uid://bsplkr4m1kvow" path="res://assets/controller/controller_pressed_b.png" id="4_n706l"]
 [ext_resource type="Texture2D" uid="uid://ce8lvsnkstnx3" path="res://assets/controller/controller_pressed_y.png" id="6_xn7o0"]
 [ext_resource type="Texture2D" uid="uid://cwsp5vwc7dd18" path="res://assets/controller/controller_right_stick.png" id="7_ictyc"]
@@ -21,6 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://0iriw1sut3ky" path="res://assets/controller/controller_dl.png" id="14_wpfw6"]
 [ext_resource type="Texture2D" uid="uid://dvwsn6rw8jddh" path="res://assets/controller/controller_dr.png" id="15_mn01g"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hx3e6"]
+shader = ExtResource("2_6k2ci")
+shader_parameter/speed = 0.01
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -31,6 +37,20 @@ grow_vertical = 2
 script = ExtResource("1_dxfnl")
 button_entry = "res://button_entry.tscn"
 stick_mult = 20
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_hx3e6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 504.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wxmua")
+expand_mode = 4
+stretch_mode = 6
 
 [node name="Base" type="TextureRect" parent="."]
 layout_mode = 1

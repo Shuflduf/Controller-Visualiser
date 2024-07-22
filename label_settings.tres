@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d1bg1qmxibanj"]
+
+[ext_resource type="FontFile" uid="uid://cgfobev0tvhmk" path="res://assets/fonts/PTSans-Bold.ttf" id="1_874b7"]
+
+[resource]
+font = ExtResource("1_874b7")
+font_size = 20
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)

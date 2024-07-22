@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://kk33620yytrp"]
+[gd_scene load_steps=3 format=3 uid="uid://kk33620yytrp"]
 
 [ext_resource type="Script" path="res://button_entry.gd" id="1_v7hrp"]
+[ext_resource type="LabelSettings" uid="uid://d1bg1qmxibanj" path="res://label_settings.tres" id="2_iwm3w"]
 
 [node name="Entry" type="HBoxContainer"]
 script = ExtResource("1_v7hrp")
@@ -9,6 +10,7 @@ script = ExtResource("1_v7hrp")
 layout_mode = 2
 size_flags_horizontal = 0
 text = "ID: 0"
+label_settings = ExtResource("2_iwm3w")
 
 [node name="Spacing" type="Label" parent="."]
 layout_mode = 2
@@ -19,3 +21,4 @@ text = "    "
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Value: true"
+label_settings = ExtResource("2_iwm3w")
