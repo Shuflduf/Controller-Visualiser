@@ -15,7 +15,6 @@ func _input(event: InputEvent) -> void:
 		buttons.get_child(event.button_index).visible = event.pressed
 	
 	if event is InputEventJoypadMotion:
-		print(event.axis)
 		match event.axis:
 			0:
 				joysticks.get_child(0).position.x = event.axis_value * stick_mult
