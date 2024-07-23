@@ -10,7 +10,7 @@ extends Control
 @export_file("*.tscn") var button_entry: String
 @export var stick_mult = 10
 
-var advanced_view_visible = true
+var advanced_view_visible = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton:
@@ -56,9 +56,8 @@ func _input(event: InputEvent) -> void:
 		var tween = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 		if advanced_view_visible:
 			tween.tween_property(advanced_view, "position:x", get_viewport_rect().size.x, 0.3)
-			#await tween.finished
-			#advanced_view.hide()
 		else:
+			$Hint.hide()
 			advanced_view.show()
 			tween.tween_property(advanced_view, "position:x", 0, 0.3)
 		advanced_view_visible = !advanced_view_visible

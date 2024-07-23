@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b2acn0vy62oj"]
+[gd_scene load_steps=26 format=3 uid="uid://b2acn0vy62oj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dxfnl"]
 [ext_resource type="Texture2D" uid="uid://ckd5734mqx8dm" path="res://assets/controller/controller_base.png" id="1_tfr2n"]
@@ -22,10 +22,17 @@
 [ext_resource type="Texture2D" uid="uid://pf0f843i67im" path="res://assets/controller/controller_dd.png" id="13_ad5fq"]
 [ext_resource type="Texture2D" uid="uid://0iriw1sut3ky" path="res://assets/controller/controller_dl.png" id="14_wpfw6"]
 [ext_resource type="Texture2D" uid="uid://dvwsn6rw8jddh" path="res://assets/controller/controller_dr.png" id="15_mn01g"]
+[ext_resource type="FontFile" uid="uid://cgfobev0tvhmk" path="res://assets/fonts/PTSans-Bold.ttf" id="23_udyqo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hx3e6"]
 shader = ExtResource("2_6k2ci")
 shader_parameter/speed = 0.01
+
+[sub_resource type="LabelSettings" id="LabelSettings_q31py"]
+font = ExtResource("23_udyqo")
+font_size = 25
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -310,10 +317,13 @@ stretch_mode = 5
 
 [node name="AdvancedView" type="HSplitContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1152.0
+offset_right = 1152.0
 grow_horizontal = 2
 grow_vertical = 2
 split_offset = 890
@@ -341,3 +351,34 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 alignment = 2
+
+[node name="Shuflduf" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.981
+anchor_right = 0.01
+anchor_bottom = 0.981
+offset_left = 0.48
+offset_top = -23.688
+offset_right = 65.48
+offset_bottom = 0.311951
+grow_vertical = 0
+text = "Shuflduf"
+label_settings = SubResource("LabelSettings_q31py")
+
+[node name="Hint" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.989
+anchor_top = 0.981
+anchor_right = 0.989
+anchor_bottom = 0.981
+offset_left = -257.328
+offset_top = -32.688
+offset_right = -0.328003
+offset_bottom = 0.311951
+grow_horizontal = 0
+grow_vertical = 0
+text = "\"Tab\" for Advanced View"
+label_settings = SubResource("LabelSettings_q31py")
