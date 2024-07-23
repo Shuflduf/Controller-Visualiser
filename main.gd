@@ -2,12 +2,15 @@ extends Control
 
 @onready var buttons: Control = %Buttons
 @onready var joysticks: Control = $Joysticks
-@onready var advanced_view: VBoxContainer = $AdvancedView
-@onready var buttons_view: VBoxContainer = $AdvancedView/Buttons
-@onready var sticks_view: VBoxContainer = $AdvancedView/Sticks
+@onready var advanced_view: HSplitContainer = %AdvancedView
+
+@onready var buttons_view: VBoxContainer = %ButtonsView
+@onready var sticks_view: VBoxContainer = %SticksView
 
 @export_file("*.tscn") var button_entry: String
 @export var stick_mult = 10
+
+var advanced_view_visible = true
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton:
@@ -48,7 +51,21 @@ func _input(event: InputEvent) -> void:
 		sticks_view.get_child(-1).keycode.text = "ID: " + str(event.axis)
 		update_entry(sticks_view, -1, snapped(event.axis_value, 0.001))
 		sort_children(sticks_view)
+	
+	elif event.is_action_pressed("tab"):
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+		if advanced_view_visible:
+			tween.tween_property(advanced_view, "position:x", get_viewport_rect().size.x, 0.3)
+			#await tween.finished
+			#advanced_view.hide()
+		else:
+			advanced_view.show()
+			tween.tween_property(advanced_view, "position:x", 0, 0.3)
+		advanced_view_visible = !advanced_view_visible
+		await tween.finished
+		advanced_view.visible = advanced_view_visible
 		
+	
 	else: return
 
 func update_entry(node, idx, info):

@@ -308,25 +308,36 @@ grow_vertical = 2
 texture = ExtResource("12_tuydi")
 stretch_mode = 5
 
-[node name="AdvancedView" type="VBoxContainer" parent="."]
+[node name="AdvancedView" type="HSplitContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -218.0
-offset_top = -324.0
-offset_bottom = 324.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+split_offset = 890
 
-[node name="Buttons" type="VBoxContainer" parent="AdvancedView"]
+[node name="Control" type="Control" parent="AdvancedView"]
 layout_mode = 2
-size_flags_vertical = 2
 
-[node name="Sticks" type="VBoxContainer" parent="AdvancedView"]
+[node name="PanelContainer" type="PanelContainer" parent="AdvancedView"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AdvancedView/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ButtonsView" type="VBoxContainer" parent="AdvancedView/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="SticksView" type="VBoxContainer" parent="AdvancedView/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 alignment = 2
